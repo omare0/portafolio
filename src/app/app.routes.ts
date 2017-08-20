@@ -6,7 +6,7 @@ import { AboutComponent, HomeComponent, ItemComponent } from './components/index
 const APP_ROUTES: Routes = [
 	{ path: 'home', component: HomeComponent }, 
 	{ path: 'about', component: AboutComponent },
-	{ path: 'item', component: ItemComponent },
+	{ path: 'item/:id', component: ItemComponent },
 	{ path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

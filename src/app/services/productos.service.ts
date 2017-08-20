@@ -21,11 +21,15 @@ export class ProductosService {
 				.subscribe( data => {
 
 					this.productos = data.json();
-
-					console.log(this.productos);
-
 					this.cargando = false;
+
 				});
+
+	}
+
+	public cargar_producto(idProducto: string) {
+
+		return this.http.get("https://portafolio-12697.firebaseio.com/productos/" + idProducto + ".json");
 
 	}
 
