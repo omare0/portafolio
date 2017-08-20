@@ -21,7 +21,7 @@
 		</svg>
 	</div>
 
-	<div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4" *ngIf="_productosService.productos.length > 0 && !cargando">
+	<div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4" *ngIf="_productosService.productos.length > 0 && !_productosService.cargando">
 		
 		<a *ngFor="let producto of _productosService.productos" [routerLink]="['/item', producto.cod]" class="rk-item ae-masonry__item animated fadeIn">
 

@@ -11,7 +11,7 @@ import { InformacionService } from '../../services/informacion.service';
 
 export class HeaderComponent {
 
-	constructor(public _informacionService: InformacionService, private router: Router) {
+	constructor(public _informacionService: InformacionService, public router: Router) {
 
 	}
 
