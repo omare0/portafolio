@@ -5,28 +5,24 @@ import { ActivatedRoute } from "@angular/router";
 import { ProductosService } from '../../services/productos.service';
 
 @Component({
-	selector: 'app-item',
-	templateUrl: './item.component.html'
+	selector: 'app-search',
+	templateUrl: './search.component.html',
 })
 
-export class ItemComponent {
+export class SearchComponent {
 
-	idProducto: string;
-	producto: any = undefined;
+	termino: string = undefined;
 
 	constructor( private route: ActivatedRoute, private _productosService: ProductosService ) {
 
 		route.params.subscribe(parametros => {
 
-			this.idProducto = parametros['id'];
-			
-			_productosService.cargar_producto(parametros['id'])
-							.subscribe(data => { 
+			this.termino = parametros['termino'];
 
-								this.producto = data.json();
-							
-							});
+			_productosService.buscar_productos( this.termino );
 
 		});
+
 	}
+
 }
